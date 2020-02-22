@@ -127,7 +127,10 @@ if ("${CONFIG_SHMEM}" STREQUAL "1")
 	add_definitions(-DCONFIG_SHMEM=1)
 	list(APPEND SRCS parameters_shmem.cpp)
 else()
-	list(APPEND SRCS parameters.cpp)
+	list(APPEND SRCS
+		parameters.cpp
+		param_translation.cpp
+		)
 endif()
 
 if(${PX4_PLATFORM} STREQUAL "nuttx")
